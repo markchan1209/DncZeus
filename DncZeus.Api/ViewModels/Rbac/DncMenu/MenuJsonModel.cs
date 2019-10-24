@@ -1,8 +1,8 @@
-﻿/******************************************
+/******************************************
  * AUTHOR:          Rector
  * CREATEDON:       2018-09-26
- * OFFICIAL_SITE:    码友网(https://codedefault.com)--专注.NET/.NET Core
- * DESCRIPTION:     菜单信息实体类
+ * OFFICIAL_SITE:    碼友網(https://codedefault.com)--專注.NET/.NET Core
+ * DESCRIPTION:     菜單信息實體類
  ******************************************/
 using System;
 using static DncZeus.Api.Entities.Enums.CommonEnum;
@@ -19,31 +19,31 @@ namespace DncZeus.Api.ViewModels.Rbac.DncMenu
         /// </summary>
         public string Guid { get; set; }
         /// <summary>
-        /// 菜单名称
+        /// 菜單名稱
         /// </summary>
         public string Name { get; set; }
         /// <summary>
-        /// 链接地址
+        /// 鏈接地址
         /// </summary>
         public string Url { get; set; }
         /// <summary>
-        /// 页面别名
+        /// 頁面別名
         /// </summary>
         public string Alias { get; set; }
         /// <summary>
-        /// 菜单图标(可选)
+        /// 菜單圖標(可選)
         /// </summary>
         public string Icon { get; set; }
         /// <summary>
-        /// 父级GUID
+        /// 父級GUID
         /// </summary>
         public string ParentGuid { get; set; }
         /// <summary>
-        /// 上级菜单名称
+        /// 上級菜單名稱
         /// </summary>
         public string ParentName { get; set; }
         /// <summary>
-        /// 菜单层级深度
+        /// 菜單層級深度
         /// </summary>
         public int Level { get; set; }
         /// <summary>
@@ -59,27 +59,27 @@ namespace DncZeus.Api.ViewModels.Rbac.DncMenu
         /// </summary>
         public Status Status { get; set; }
         /// <summary>
-        /// 是否为默认路由
+        /// 是否為默認路由
         /// </summary>
         public YesOrNo IsDefaultRouter { get; set; }
         /// <summary>
-        /// 是否已删
+        /// 是否已刪
         /// </summary>
         public IsDeleted IsDeleted { get; set; }
         /// <summary>
-        /// 创建时间
+        /// 創建時間
         /// </summary>
         public string CreatedOn { get; set; }
         /// <summary>
-        /// 创建者ID
+        /// 創建者ID
         /// </summary>
         public Guid CreatedByUserGuid { get; set; }
         /// <summary>
-        /// 创建者姓名
+        /// 創建者姓名
         /// </summary>
         public string CreatedByUserName { get; set; }
         /// <summary>
-        /// 最近修改时间
+        /// 最近修改時間
         /// </summary>
         public string ModifiedOn { get; set; }
         /// <summary>
@@ -91,19 +91,19 @@ namespace DncZeus.Api.ViewModels.Rbac.DncMenu
         /// </summary>
         public string ModifiedByUserName { get; set; }
         /// <summary>
-        /// 前端组件(.vue)
+        /// 前端組件(.vue)
         /// </summary>
         public string Component { get; set; }
         /// <summary>
-        /// 在菜单中隐藏
+        /// 在菜單中隱藏
         /// </summary>
         public YesOrNo HideInMenu { get; set; }
         /// <summary>
-        /// 不缓存页面
+        /// 不緩存頁面
         /// </summary>
         public YesOrNo NotCache { get; set; }
         /// <summary>
-        /// 页面关闭前的回调函数
+        /// 頁面關閉前的回調函數
         /// </summary>
         public string BeforeCloseFun { get; set; }
     }

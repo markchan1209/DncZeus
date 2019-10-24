@@ -1,8 +1,8 @@
-﻿/******************************************
+/******************************************
  * AUTHOR:          Rector
  * CREATEDON:       2018-11-14
- * OFFICIAL_SITE:    码友网(https://codedefault.com)--专注.NET/.NET Core
- * DESCRIPTION:     图标实体类
+ * OFFICIAL_SITE:    碼友網(https://codedefault.com)--專注.NET/.NET Core
+ * DESCRIPTION:     圖標實體類
  ******************************************/
 using System;
 using System.ComponentModel.DataAnnotations;
@@ -12,7 +12,7 @@ using static DncZeus.Api.Entities.Enums.CommonEnum;
 namespace DncZeus.Api.Entities
 {
     /// <summary>
-    /// 图标实体类
+    /// 圖標實體類
     /// </summary>
     public class DncIcon
     {
@@ -23,23 +23,23 @@ namespace DncZeus.Api.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         /// <summary>
-        /// 图标名称
+        /// 圖標名稱
         /// </summary>
         [Required]
         [Column(TypeName = "nvarchar(50)")]
         public string Code { get; set; }
         /// <summary>
-        /// 图标的大小，单位是 px
+        /// 圖標的大小，單位是 px
         /// </summary>
         [Column(TypeName = "nvarchar(20)")]
         public string Size { get; set; }
         /// <summary>
-        /// 图标颜色
+        /// 圖標顏色
         /// </summary>
         [Column(TypeName = "nvarchar(50)")]
         public string Color { get; set; }
         /// <summary>
-        /// 自定义图标
+        /// 自定義圖標
         /// </summary>
         [Column(TypeName = "nvarchar(60)")]
         public string Custom { get; set; }

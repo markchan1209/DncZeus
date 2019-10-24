@@ -1,7 +1,7 @@
-﻿/******************************************
+/******************************************
  * AUTHOR:          Rector
  * CREATEDON:       2018-09-26
- * OFFICIAL_SITE:    码友网(https://codedefault.com)--专注.NET/.NET Core
+ * OFFICIAL_SITE:    碼友網(https://codedefault.com)--專注.NET/.NET Core
  ******************************************/
 using System;
 using System.Collections.Generic;
@@ -18,7 +18,7 @@ namespace DncZeus.Api.Entities
     public class DncUser
     {
         /// <summary>
-        /// 用户GUID
+        /// 用戶GUID
         /// </summary>
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Key]
@@ -39,19 +39,19 @@ namespace DncZeus.Api.Entities
         public UserStatus Status { get; set; }
         public IsDeleted IsDeleted { get; set; }
         /// <summary>
-        /// 创建时间
+        /// 創建時間
         /// </summary>
         public DateTime CreatedOn { get; set; }
         /// <summary>
-        /// 创建者ID
+        /// 創建者ID
         /// </summary>
         public Guid CreatedByUserGuid { get; set; }
         /// <summary>
-        /// 创建者姓名
+        /// 創建者姓名
         /// </summary>
         public string CreatedByUserName { get; set; }
         /// <summary>
-        /// 最近修改时间
+        /// 最近修改時間
         /// </summary>
         public DateTime? ModifiedOn { get; set; }
         /// <summary>
@@ -63,37 +63,37 @@ namespace DncZeus.Api.Entities
         /// </summary>
         public string ModifiedByUserName { get; set; }
         /// <summary>
-        /// 用户描述信息
+        /// 用戶描述信息
         /// </summary>
         [Column(TypeName = "nvarchar(800)")]
         public string Description { get; set; }
         /// <summary>
-        /// 用户的角色集合
+        /// 用戶的角色集合
         /// </summary>
         public ICollection<DncUserRoleMapping> UserRoles { get; set; }
     }
 
     /// <summary>
-    /// 用户类型
+    /// 用戶類型
     /// </summary>
     public enum UserType
     {
         /// <summary>
-        /// 超级管理员
+        /// 超級管理員
         /// </summary>
         SuperAdministrator = 0,
         /// <summary>
-        /// 管理员
+        /// 管理員
         /// </summary>
         Admin = 1,
         /// <summary>
-        /// 一般用户
+        /// 一般用戶
         /// </summary>
         GeneralUser = 2
     }
 
     /// <summary>
-    /// 用户状态
+    /// 用戶狀態
     /// </summary>
     public enum UserStatus {
         /// <summary>

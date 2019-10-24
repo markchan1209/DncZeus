@@ -1,8 +1,8 @@
-﻿/******************************************
+/******************************************
  * AUTHOR:          Rector
  * CREATEDON:       2018-09-26
- * OFFICIAL_SITE:    码友网(https://codedefault.com)--专注.NET/.NET Core
- * 版权所有，请勿删除
+ * OFFICIAL_SITE:    碼友網(https://codedefault.com)--專注.NET/.NET Core
+ * 版權所有，請勿刪除
  ******************************************/
 
 using System;
@@ -78,9 +78,9 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
         }
 
         /// <summary>
-        /// 创建角色
+        /// 創建角色
         /// </summary>
-        /// <param name="model">角色视图实体</param>
+        /// <param name="model">角色視圖實體</param>
         /// <returns></returns>
         [HttpPost]
         [ProducesResponseType(200)]
@@ -89,7 +89,7 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
             var response = ResponseModelFactory.CreateInstance;
             if (model.Name.Trim().Length <= 0)
             {
-                response.SetFailed("请输入角色名称");
+                response.SetFailed("請輸入角色名稱");
                 return Ok(response);
             }
             using (_dbContext)
@@ -115,9 +115,9 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
         }
 
         /// <summary>
-        /// 编辑角色
+        /// 編輯角色
         /// </summary>
-        /// <param name="code">角色惟一编码</param>
+        /// <param name="code">角色惟一編碼</param>
         /// <returns></returns>
         [HttpGet("{code}")]
         [ProducesResponseType(200)]
@@ -133,9 +133,9 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
         }
 
         /// <summary>
-        /// 保存编辑后的角色信息
+        /// 保存編輯後的角色信息
         /// </summary>
-        /// <param name="model">角色视图实体</param>
+        /// <param name="model">角色視圖實體</param>
         /// <returns></returns>
         [HttpPost]
         [ProducesResponseType(200)]
@@ -159,7 +159,7 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
 
                 if (entity.IsSuperAdministrator && !AuthContextService.IsSupperAdministator)
                 {
-                    response.SetFailed("没有足够的权限");
+                    response.SetFailed("沒有足夠的權限");
                     return Ok(response);
                 }
 
@@ -176,9 +176,9 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
         }
 
         /// <summary>
-        /// 删除角色
+        /// 刪除角色
         /// </summary>
-        /// <param name="ids">角色ID,多个以逗号分隔</param>
+        /// <param name="ids">角色ID,多個以逗號分隔</param>
         /// <returns></returns>
         [HttpGet("{ids}")]
         [ProducesResponseType(200)]
@@ -195,9 +195,9 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
         }
 
         /// <summary>
-        /// 恢复角色
+        /// 恢復角色
         /// </summary>
-        /// <param name="ids">角色ID,多个以逗号分隔</param>
+        /// <param name="ids">角色ID,多個以逗號分隔</param>
         /// <returns></returns>
         [HttpGet("{ids}")]
         [ProducesResponseType(200)]
@@ -211,7 +211,7 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
         /// 批量操作
         /// </summary>
         /// <param name="command"></param>
-        /// <param name="ids">角色ID,多个以逗号分隔</param>
+        /// <param name="ids">角色ID,多個以逗號分隔</param>
         /// <returns></returns>
         [HttpGet]
         [ProducesResponseType(200)]
@@ -249,9 +249,9 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
         }
 
         /// <summary>
-        /// 为指定角色分配权限
+        /// 為指定角色分配權限
         /// </summary>
-        /// <param name="payload">角色分配权限的请求载体类</param>
+        /// <param name="payload">角色分配權限的請求載體類</param>
         /// <returns></returns>
         [HttpPost("/api/v1/rbac/role/assign_permission")]
         public IActionResult AssignPermission(RoleAssignPermissionPayload payload)
@@ -265,13 +265,13 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
                     response.SetFailed("角色不存在");
                     return Ok(response);
                 }
-                // 如果是超级管理员，则不写入到角色-权限映射表(在读取时跳过角色权限映射，直接读取系统所有的权限)
+                // 如果是超級管理員，則不寫入到角色-權限映射表(在讀取時跳過角色權限映射，直接讀取系統所有的權限)
                 if (role.IsSuperAdministrator)
                 {
                     response.SetSuccess();
                     return Ok(response);
                 }
-                //先删除当前角色原来已分配的权限
+                //先刪除當前角色原來已分配的權限
                 _dbContext.Database.ExecuteSqlCommand("DELETE FROM DncRolePermissionMapping WHERE RoleCode={0}", payload.RoleCode);
                 if (payload.Permissions != null || payload.Permissions.Count > 0)
                 {
@@ -290,9 +290,9 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
         }
 
         /// <summary>
-        /// 获取指定用户的角色列表
+        /// 獲取指定用戶的角色列表
         /// </summary>
-        /// <param name="guid">用户GUID</param>
+        /// <param name="guid">用戶GUID</param>
         /// <returns></returns>
         [HttpGet("/api/v1/rbac/role/find_list_by_user_guid/{guid}")]
         public IActionResult FindListByUserGuid(Guid guid)
@@ -300,7 +300,7 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
             var response = ResponseModelFactory.CreateInstance;
             using (_dbContext)
             {
-                //有N+1次查询的性能问题
+                //有N+1次查詢的性能問題
                 //var query = _dbContext.DncUser
                 //    .Include(r => r.UserRoles)
                 //    .ThenInclude(x => x.DncRole)
@@ -322,7 +322,7 @@ WHERE URM.UserGuid={0}";
         }
 
         /// <summary>
-        /// 查询所有角色列表(只包含主要的字段信息:name,code)
+        /// 查詢所有角色列表(只包含主要的字段信息:name,code)
         /// </summary>
         /// <returns></returns>
         [HttpGet("/api/v1/rbac/role/find_simple_list")]
@@ -340,10 +340,10 @@ WHERE URM.UserGuid={0}";
         #region 私有方法
 
         /// <summary>
-        /// 删除角色
+        /// 刪除角色
         /// </summary>
         /// <param name="isDeleted"></param>
-        /// <param name="ids">角色ID字符串,多个以逗号隔开</param>
+        /// <param name="ids">角色ID字符串,多個以逗號隔開</param>
         /// <returns></returns>
         private ResponseModel UpdateIsDelete(CommonEnum.IsDeleted isDeleted, string ids)
         {
@@ -360,10 +360,10 @@ WHERE URM.UserGuid={0}";
         }
 
         /// <summary>
-        /// 删除角色
+        /// 刪除角色
         /// </summary>
-        /// <param name="status">角色状态</param>
-        /// <param name="ids">角色ID字符串,多个以逗号隔开</param>
+        /// <param name="status">角色狀態</param>
+        /// <param name="ids">角色ID字符串,多個以逗號隔開</param>
         /// <returns></returns>
         private ResponseModel UpdateStatus(UserStatus status, string ids)
         {

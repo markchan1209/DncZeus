@@ -1,8 +1,8 @@
-﻿/******************************************
+/******************************************
  * AUTHOR:          Rector
  * CREATEDON:       2018-09-26
- * OFFICIAL_SITE:    码友网(https://codedefault.com)--专注.NET/.NET Core
- * DESCRIPTION:     用户信息实体类
+ * OFFICIAL_SITE:    碼友網(https://codedefault.com)--專注.NET/.NET Core
+ * DESCRIPTION:     用戶信息實體類
  ******************************************/
 using DncZeus.Api.Entities;
 using System;

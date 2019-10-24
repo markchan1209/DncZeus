@@ -10,7 +10,7 @@
         <DropdownItem name="message">
           消息中心<Badge style="margin-left: 10px" :count="messageUnreadCount"></Badge>
         </DropdownItem>
-        <DropdownItem name="logout">退出登录</DropdownItem>
+        <DropdownItem name="logout">退出登錄</DropdownItem>
       </DropdownMenu>
     </Dropdown>
   </div>
@@ -38,9 +38,9 @@ export default {
     logout () {
       var $this = this;
       this.$Modal.confirm({
-        title:"退出确认",
-        content:"确定要退出系统吗?",
-        okText:"确定退出",
+        title:"退出確認",
+        content:"確定要退出系統嗎?",
+        okText:"確定退出",
         cancelText:"再想想",
         loading:true,
         onOk(){

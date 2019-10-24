@@ -1,4 +1,4 @@
-﻿using DncZeus.Api.Extensions;
+using DncZeus.Api.Extensions;
 using DncZeus.Api.Models.Response;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -8,7 +8,7 @@ using Microsoft.Extensions.Logging;
 namespace DncZeus.Api.Controllers
 {
     /// <summary>
-    /// 测试控制器
+    /// 測試控制器
     /// </summary>
     [ApiController]
     [Route("[controller]/[action]")]
@@ -22,7 +22,7 @@ namespace DncZeus.Api.Controllers
         }
 
         /// <summary>
-        /// 测试日志
+        /// 測試日誌
         /// </summary>
         /// <returns></returns>
         // GET: /<controller>/

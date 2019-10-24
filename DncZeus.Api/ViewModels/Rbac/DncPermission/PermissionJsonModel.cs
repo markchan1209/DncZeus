@@ -1,8 +1,8 @@
-﻿/******************************************
+/******************************************
  * AUTHOR:          Rector
  * CREATEDON:       2018-09-26
- * OFFICIAL_SITE:    码友网(https://codedefault.com)--专注.NET/.NET Core
- * 版权所有，请勿删除
+ * OFFICIAL_SITE:    碼友網(https://codedefault.com)--專注.NET/.NET Core
+ * 版權所有，請勿刪除
  ******************************************/
 
 using System;
@@ -11,32 +11,32 @@ using DncZeus.Api.Entities.Enums;
 namespace DncZeus.Api.ViewModels.Rbac.DncPermission
 {
     /// <summary>
-    /// 权限实体类
+    /// 權限實體類
     /// </summary>
     public class PermissionJsonModel
     {
         /// <summary>
-        /// 权限编码
+        /// 權限編碼
         /// </summary>
         public string Code { get; set; }
         /// <summary>
-        /// 菜单GUID
+        /// 菜單GUID
         /// </summary>
         public Guid MenuGuid { get; set; }
         /// <summary>
-        /// 菜单名称
+        /// 菜單名稱
         /// </summary>
         public string MenuName { get; set; }
         /// <summary>
-        /// 权限名称
+        /// 權限名稱
         /// </summary>
         public string Name { get; set; }
         /// <summary>
-        /// 权限操作码
+        /// 權限操作碼
         /// </summary>
         public string ActionCode { get; set; }
         /// <summary>
-        /// 图标(可选)
+        /// 圖標(可選)
         /// </summary>
         public string Icon { get; set; }
         /// <summary>
@@ -44,31 +44,31 @@ namespace DncZeus.Api.ViewModels.Rbac.DncPermission
         /// </summary>
         public string Description { get; set; }
         /// <summary>
-        /// 状态
+        /// 狀態
         /// </summary>
         public CommonEnum.Status Status { get; set; }
         /// <summary>
-        /// 是否已删
+        /// 是否已刪
         /// </summary>
         public CommonEnum.IsDeleted IsDeleted { get; set; }
         /// <summary>
-        /// 权限类型(0:菜单,1:按钮/操作/功能等)
+        /// 權限類型(0:菜單,1:按鈕/操作/功能等)
         /// </summary>
         public CommonEnum.PermissionType Type { get; set; }
         /// <summary>
-        /// 创建时间
+        /// 創建時間
         /// </summary>
         public string CreatedOn { get; set; }
         /// <summary>
-        /// 创建者ID
+        /// 創建者ID
         /// </summary>
         public int CreatedByUserId { get; set; }
         /// <summary>
-        /// 创建者姓名
+        /// 創建者姓名
         /// </summary>
         public string CreatedByUserName { get; set; }
         /// <summary>
-        /// 最近修改时间
+        /// 最近修改時間
         /// </summary>
         public string ModifiedOn { get; set; }
         /// <summary>
@@ -80,7 +80,7 @@ namespace DncZeus.Api.ViewModels.Rbac.DncPermission
         /// </summary>
         public string ModifiedByUserName { get; set; }
         /// <summary>
-        /// 权限类型的显示文本
+        /// 權限類型的顯示文本
         /// </summary>
         public string PermissionTypeText { get; set; }
     }

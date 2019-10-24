@@ -1,8 +1,8 @@
-﻿/******************************************
+/******************************************
  * AUTHOR:          Rector
  * CREATEDON:       2018-09-26
- * OFFICIAL_SITE:    码友网(https://codedefault.com)--专注.NET/.NET Core
- * 版权所有，请勿删除
+ * OFFICIAL_SITE:    碼友網(https://codedefault.com)--專注.NET/.NET Core
+ * 版權所有，請勿刪除
  ******************************************/
 
 using DncZeus.Api.Extensions.CustomException;
@@ -30,7 +30,7 @@ namespace DncZeus.Api.Controllers
         [HttpGet]
         public IActionResult Code(int code)
         {
-            // 捕获状态码
+            // 捕獲狀態碼
             var statusCode = HttpContext.Features.Get<IExceptionHandlerFeature>()?.Error is HttpException httpEx ?
                 httpEx.StatusCode : (HttpStatusCode)Response.StatusCode;
             var ex = (HttpException)HttpContext.Features.Get<IExceptionHandlerFeature>()?.Error;
@@ -41,7 +41,7 @@ namespace DncZeus.Api.Controllers
                 StatusCode = code,
                 Message = ex?.ToString()
             };
-            // 如果是ASP.NET Core Web Api 应用程序，直接返回状态码(不跳转到错误页面，这里假设所有API接口的路径都是以/api/开始的)
+            // 如果是ASP.NET Core Web Api 應用程序，直接返回狀態碼(不跳轉到錯誤頁面，這裡假設所有API接口的路徑都是以/api/開始的)
             if (HttpContext.Features.Get<IHttpRequestFeature>().RawTarget.StartsWith("/api/", StringComparison.Ordinal))
             {
                  parsedCode = (HttpStatusCode)code;

@@ -1,8 +1,8 @@
-﻿/******************************************
+/******************************************
  * AUTHOR:          Rector
  * CREATEDON:       2018-09-26
- * OFFICIAL_SITE:    码友网(https://codedefault.com)--专注.NET/.NET Core
- * 版权所有，请勿删除
+ * OFFICIAL_SITE:    碼友網(https://codedefault.com)--專注.NET/.NET Core
+ * 版權所有，請勿刪除
  ******************************************/
 
 using DncZeus.Api.Extensions.AuthContext;
@@ -30,7 +30,7 @@ namespace DncZeus.Api.Extensions.CustomException
         }
 
         /// <summary>
-        /// 操作的别名
+        /// 操作的別名
         /// </summary>
         public string ActionAlias { get; set; }
 
@@ -41,7 +41,7 @@ namespace DncZeus.Api.Extensions.CustomException
         public void OnAuthorization(AuthorizationFilterContext context)
         {
             return;
-            // 以下权限拦截器未现实，所以直接return
+            // 以下權限攔截器未現實，所以直接return
             var user = context.HttpContext.User;
 
             if (!user.Identity.IsAuthenticated)

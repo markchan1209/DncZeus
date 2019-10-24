@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+using AutoMapper;
 using DncZeus.Api.Entities;
 using DncZeus.Api.Entities.Enums;
 using DncZeus.Api.Extensions;
@@ -16,8 +16,8 @@ using System.Linq;
 /******************************************
  * AUTHOR:          Rector
  * CREATEDON:       2018-09-26
- * OFFICIAL_SITE:    码友网(https://codedefault.com)--专注.NET/.NET Core
- * 版权所有，请勿删除
+ * OFFICIAL_SITE:    碼友網(https://codedefault.com)--專注.NET/.NET Core
+ * 版權所有，請勿刪除
  ******************************************/
 
 namespace DncZeus.Api.Controllers.Api.V1.Rbac
@@ -81,9 +81,9 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
         }
 
         /// <summary>
-        /// 创建用户
+        /// 創建用戶
         /// </summary>
-        /// <param name="model">用户视图实体</param>
+        /// <param name="model">用戶視圖實體</param>
         /// <returns></returns>
         [HttpPost]
         [ProducesResponseType(200)]
@@ -92,14 +92,14 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
             var response = ResponseModelFactory.CreateInstance;
             if (model.LoginName.Trim().Length <= 0)
             {
-                response.SetFailed("请输入登录名称");
+                response.SetFailed("請輸入登錄名稱");
                 return Ok(response);
             }
             using (_dbContext)
             {
                 if (_dbContext.DncUser.Count(x => x.LoginName == model.LoginName) > 0)
                 {
-                    response.SetFailed("登录名已存在");
+                    response.SetFailed("登錄名已存在");
                     return Ok(response);
                 }
                 var entity = _mapper.Map<UserCreateViewModel, DncUser>(model);
@@ -115,9 +115,9 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
         }
 
         /// <summary>
-        /// 编辑用户
+        /// 編輯用戶
         /// </summary>
-        /// <param name="guid">用户GUID</param>
+        /// <param name="guid">用戶GUID</param>
         /// <returns></returns>
         [HttpGet("{guid}")]
         [ProducesResponseType(200)]
@@ -133,9 +133,9 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
         }
 
         /// <summary>
-        /// 保存编辑后的用户信息
+        /// 保存編輯後的用戶信息
         /// </summary>
-        /// <param name="model">用户视图实体</param>
+        /// <param name="model">用戶視圖實體</param>
         /// <returns></returns>
         [HttpPost]
         [ProducesResponseType(200)]
@@ -152,7 +152,7 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
                 var entity = _dbContext.DncUser.FirstOrDefault(x => x.Guid == model.Guid);
                 if (entity == null)
                 {
-                    response.SetFailed("用户不存在");
+                    response.SetFailed("用戶不存在");
                     return Ok(response);
                 }
                 entity.DisplayName = model.DisplayName;
@@ -172,9 +172,9 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
         }
 
         /// <summary>
-        /// 删除用户
+        /// 刪除用戶
         /// </summary>
-        /// <param name="ids">用户GUID,多个以逗号分隔</param>
+        /// <param name="ids">用戶GUID,多個以逗號分隔</param>
         /// <returns></returns>
         [HttpGet("{ids}")]
         [ProducesResponseType(200)]
@@ -191,9 +191,9 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
         }
 
         /// <summary>
-        /// 恢复用户
+        /// 恢復用戶
         /// </summary>
-        /// <param name="ids">用户GUID,多个以逗号分隔</param>
+        /// <param name="ids">用戶GUID,多個以逗號分隔</param>
         /// <returns></returns>
         [HttpGet("{ids}")]
         [ProducesResponseType(200)]
@@ -207,7 +207,7 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
         /// 批量操作
         /// </summary>
         /// <param name="command"></param>
-        /// <param name="ids">用户ID,多个以逗号分隔</param>
+        /// <param name="ids">用戶ID,多個以逗號分隔</param>
         /// <returns></returns>
         [HttpGet]
         [ProducesResponseType(200)]
@@ -244,9 +244,9 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
             return Ok(response);
         }
 
-        #region 用户-角色
+        #region 用戶-角色
         /// <summary>
-        /// 保存用户-角色的关系映射数据
+        /// 保存用戶-角色的關係映射數據
         /// </summary>
         /// <param name="model"></param>
         /// <returns></returns>
@@ -274,7 +274,7 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
             }
             else
             {
-                response.SetFailed("保存用户角色数据失败");
+                response.SetFailed("保存用戶角色數據失敗");
             }
             return Ok(response);
         }
@@ -282,10 +282,10 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
 
         #region 私有方法
         /// <summary>
-        /// 删除用户
+        /// 刪除用戶
         /// </summary>
         /// <param name="isDeleted"></param>
-        /// <param name="ids">用户ID字符串,多个以逗号隔开</param>
+        /// <param name="ids">用戶ID字符串,多個以逗號隔開</param>
         /// <returns></returns>
         private ResponseModel UpdateIsDelete(CommonEnum.IsDeleted isDeleted, string ids)
         {
@@ -307,10 +307,10 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
         }
 
         /// <summary>
-        /// 删除用户
+        /// 刪除用戶
         /// </summary>
-        /// <param name="status">用户状态</param>
-        /// <param name="ids">用户ID字符串,多个以逗号隔开</param>
+        /// <param name="status">用戶狀態</param>
+        /// <param name="ids">用戶ID字符串,多個以逗號隔開</param>
         /// <returns></returns>
         private ResponseModel UpdateStatus(UserStatus status, string ids)
         {

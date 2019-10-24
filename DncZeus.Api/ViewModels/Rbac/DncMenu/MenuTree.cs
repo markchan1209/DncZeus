@@ -1,8 +1,8 @@
-﻿/******************************************
+/******************************************
  * AUTHOR:          Rector
  * CREATEDON:       2018-09-26
- * OFFICIAL_SITE:    码友网(https://codedefault.com)--专注.NET/.NET Core
- * 版权所有，请勿删除
+ * OFFICIAL_SITE:    碼友網(https://codedefault.com)--專注.NET/.NET Core
+ * 版權所有，請勿刪除
  ******************************************/
 
 using System;
@@ -11,7 +11,7 @@ using System.Collections.Generic;
 namespace DncZeus.Api.ViewModels.Rbac.DncMenu
 {
     /// <summary>
-    /// 用于iview的菜单树
+    /// 用於iview的菜單樹
     /// </summary>
     public class MenuTree
     {
@@ -31,15 +31,15 @@ namespace DncZeus.Api.ViewModels.Rbac.DncMenu
         /// </summary>
         public Guid? ParentGuid { get; set; }
         /// <summary>
-        /// 标题(菜单名称)
+        /// 標題(菜單名稱)
         /// </summary>
         public string Title { get; set; }
         /// <summary>
-        /// 是否展开子节点
+        /// 是否展開子節點
         /// </summary>
         public bool Expand { get; set; }
         /// <summary>
-        /// 禁掉响应
+        /// 禁掉響應
         /// </summary>
         public bool Disabled { get; set; }
         /// <summary>
@@ -47,15 +47,15 @@ namespace DncZeus.Api.ViewModels.Rbac.DncMenu
         /// </summary>
         public bool DisableCheckbox { get; set; }
         /// <summary>
-        /// 是否选中子节点	
+        /// 是否選中子節點	
         /// </summary>
         public bool Selected { get; set; }
         /// <summary>
-        /// 是否勾选(如果勾选，子节点也会全部勾选)
+        /// 是否勾選(如果勾選，子節點也會全部勾選)
         /// </summary>
         public bool Checked { get; set; }
         /// <summary>
-        /// 子节点属性数组
+        /// 子節點屬性數組
         /// </summary>
         public List<MenuTree> Children { get; set; }
     }

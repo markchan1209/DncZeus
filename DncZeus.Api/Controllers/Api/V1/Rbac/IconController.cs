@@ -1,8 +1,8 @@
-﻿/******************************************
+/******************************************
  * AUTHOR:          Rector
  * CREATEDON:       2018-09-26
- * OFFICIAL_SITE:    码友网(https://codedefault.com)--专注.NET/.NET Core
- * 版权所有，请勿删除
+ * OFFICIAL_SITE:    碼友網(https://codedefault.com)--專注.NET/.NET Core
+ * 版權所有，請勿刪除
  ******************************************/
 
 using AutoMapper;
@@ -86,7 +86,7 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
             var response = ResponseModelFactory.CreateResultInstance;
             if (string.IsNullOrEmpty(kw))
             {
-                response.SetFailed("没有查询到数据");
+                response.SetFailed("沒有查詢到數據");
                 return Ok(response);
             }
             using (_dbContext)
@@ -103,9 +103,9 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
         }
 
         /// <summary>
-        /// 创建图标
+        /// 創建圖標
         /// </summary>
-        /// <param name="model">图标视图实体</param>
+        /// <param name="model">圖標視圖實體</param>
         /// <returns></returns>
         [HttpPost]
         [ProducesResponseType(200)]
@@ -114,14 +114,14 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
             var response = ResponseModelFactory.CreateInstance;
             if (model.Code.Trim().Length <= 0)
             {
-                response.SetFailed("请输入图标名称");
+                response.SetFailed("請輸入圖標名稱");
                 return Ok(response);
             }
             using (_dbContext)
             {
                 if (_dbContext.DncIcon.Count(x => x.Code == model.Code) > 0)
                 {
-                    response.SetFailed("图标已存在");
+                    response.SetFailed("圖標已存在");
                     return Ok(response);
                 }
                 var entity = _mapper.Map<IconCreateViewModel, DncIcon>(model);
@@ -137,9 +137,9 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
         }
 
         /// <summary>
-        /// 编辑图标
+        /// 編輯圖標
         /// </summary>
-        /// <param name="id">图标ID</param>
+        /// <param name="id">圖標ID</param>
         /// <returns></returns>
         [HttpGet("{id}")]
         [ProducesResponseType(200)]
@@ -155,9 +155,9 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
         }
 
         /// <summary>
-        /// 保存编辑后的图标信息
+        /// 保存編輯後的圖標信息
         /// </summary>
-        /// <param name="model">图标视图实体</param>
+        /// <param name="model">圖標視圖實體</param>
         /// <returns></returns>
         [HttpPost]
         [ProducesResponseType(200)]
@@ -166,14 +166,14 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
             var response = ResponseModelFactory.CreateInstance;
             if (model.Code.Trim().Length <= 0)
             {
-                response.SetFailed("请输入图标名称");
+                response.SetFailed("請輸入圖標名稱");
                 return Ok(response);
             }
             using (_dbContext)
             {
                 if (_dbContext.DncIcon.Count(x => x.Code == model.Code && x.Id != model.Id) > 0)
                 {
-                    response.SetFailed("图标已存在");
+                    response.SetFailed("圖標已存在");
                     return Ok(response);
                 }
                 var entity = _dbContext.DncIcon.FirstOrDefault(x => x.Id == model.Id);
@@ -194,9 +194,9 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
         }
 
         /// <summary>
-        /// 删除图标
+        /// 刪除圖標
         /// </summary>
-        /// <param name="ids">图标ID,多个以逗号分隔</param>
+        /// <param name="ids">圖標ID,多個以逗號分隔</param>
         /// <returns></returns>
         [HttpGet("{ids}")]
         [ProducesResponseType(200)]
@@ -214,9 +214,9 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
         }
 
         /// <summary>
-        /// 恢复图标
+        /// 恢復圖標
         /// </summary>
-        /// <param name="ids">图标ID,多个以逗号分隔</param>
+        /// <param name="ids">圖標ID,多個以逗號分隔</param>
         /// <returns></returns>
         [HttpGet("{ids}")]
         [ProducesResponseType(200)]
@@ -236,7 +236,7 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
         /// 批量操作
         /// </summary>
         /// <param name="command"></param>
-        /// <param name="ids">图标ID,多个以逗号分隔</param>
+        /// <param name="ids">圖標ID,多個以逗號分隔</param>
         /// <returns></returns>
         [HttpGet]
         [ProducesResponseType(200)]
@@ -278,9 +278,9 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
         }
 
         /// <summary>
-        /// 创建图标
+        /// 創建圖標
         /// </summary>
-        /// <param name="model">多行图标视图</param>
+        /// <param name="model">多行圖標視圖</param>
         /// <returns></returns>
         [HttpPost]
         [ProducesResponseType(200)]
@@ -294,7 +294,7 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
             }
             if (model.Icons.Trim().Length <= 0)
             {
-                response.SetFailed("没有可用的图标");
+                response.SetFailed("沒有可用的圖標");
                 return Ok(response);
             }
             var models = model.Icons.Split(new string[] { "\r\n", "\n" }, StringSplitOptions.RemoveEmptyEntries).Select(x => new DncIcon
@@ -302,7 +302,7 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
                 Code = x.Trim(),
                 CreatedByUserGuid = AuthContextService.CurrentUser.Guid,
                 CreatedOn = DateTime.Now,
-                CreatedByUserName = "超级管理员"
+                CreatedByUserName = "超級管理員"
             });
             using (_dbContext)
             {
@@ -314,10 +314,10 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
         }
 
         /// <summary>
-        /// 删除图标
+        /// 刪除圖標
         /// </summary>
         /// <param name="isDeleted"></param>
-        /// <param name="ids">图标ID字符串,多个以逗号隔开</param>
+        /// <param name="ids">圖標ID字符串,多個以逗號隔開</param>
         /// <returns></returns>
         private ResponseModel UpdateIsDelete(CommonEnum.IsDeleted isDeleted, string ids)
         {
@@ -334,10 +334,10 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
         }
 
         /// <summary>
-        /// 删除图标
+        /// 刪除圖標
         /// </summary>
-        /// <param name="status">图标状态</param>
-        /// <param name="ids">图标ID字符串,多个以逗号隔开</param>
+        /// <param name="status">圖標狀態</param>
+        /// <param name="ids">圖標ID字符串,多個以逗號隔開</param>
         /// <returns></returns>
         private ResponseModel UpdateStatus(UserStatus status, string ids)
         {

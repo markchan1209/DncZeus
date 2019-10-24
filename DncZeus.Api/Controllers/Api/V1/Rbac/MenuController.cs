@@ -1,8 +1,8 @@
 /******************************************
  * AUTHOR:          Rector
  * CREATEDON:       2018-09-26
- * OFFICIAL_SITE:    码友网(https://codedefault.com)--专注.NET/.NET Core
- * 版权所有，请勿删除
+ * OFFICIAL_SITE:    碼友網(https://codedefault.com)--專注.NET/.NET Core
+ * 版權所有，請勿刪除
  ******************************************/
 
 using AutoMapper;
@@ -81,9 +81,9 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
         }
 
         /// <summary>
-        /// 创建菜单
+        /// 創建菜單
         /// </summary>
-        /// <param name="model">菜单视图实体</param>
+        /// <param name="model">菜單視圖實體</param>
         /// <returns></returns>
         [HttpPost]
         [ProducesResponseType(200)]
@@ -107,9 +107,9 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
         }
 
         /// <summary>
-        /// 编辑菜单
+        /// 編輯菜單
         /// </summary>
-        /// <param name="guid">菜单ID</param>
+        /// <param name="guid">菜單ID</param>
         /// <returns></returns>
         [HttpGet("{guid}")]
         [ProducesResponseType(200)]
@@ -135,9 +135,9 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
         }
 
         /// <summary>
-        /// 保存编辑后的菜单信息
+        /// 保存編輯後的菜單信息
         /// </summary>
-        /// <param name="model">菜单视图实体</param>
+        /// <param name="model">菜單視圖實體</param>
         /// <returns></returns>
         [HttpPost]
         [ProducesResponseType(200)]
@@ -176,7 +176,7 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
         }
 
         /// <summary>
-        /// 菜单树
+        /// 菜單樹
         /// </summary>
         /// <returns></returns>
         [HttpGet("{selected?}")]
@@ -189,9 +189,9 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
         }
 
         /// <summary>
-        /// 删除菜单
+        /// 刪除菜單
         /// </summary>
-        /// <param name="ids">菜单ID,多个以逗号分隔</param>
+        /// <param name="ids">菜單ID,多個以逗號分隔</param>
         /// <returns></returns>
         [HttpGet("{ids}")]
         [ProducesResponseType(200)]
@@ -208,9 +208,9 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
         }
 
         /// <summary>
-        /// 恢复菜单
+        /// 恢復菜單
         /// </summary>
-        /// <param name="ids">菜单ID,多个以逗号分隔</param>
+        /// <param name="ids">菜單ID,多個以逗號分隔</param>
         /// <returns></returns>
         [HttpGet("{ids}")]
         [ProducesResponseType(200)]
@@ -224,7 +224,7 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
         /// 批量操作
         /// </summary>
         /// <param name="command"></param>
-        /// <param name="ids">菜单ID,多个以逗号分隔</param>
+        /// <param name="ids">菜單ID,多個以逗號分隔</param>
         /// <returns></returns>
         [HttpGet]
         [ProducesResponseType(200)]
@@ -262,10 +262,10 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
         }
 
         /// <summary>
-        /// 删除菜单
+        /// 刪除菜單
         /// </summary>
         /// <param name="isDeleted"></param>
-        /// <param name="ids">菜单ID字符串,多个以逗号隔开</param>
+        /// <param name="ids">菜單ID字符串,多個以逗號隔開</param>
         /// <returns></returns>
         private ResponseModel UpdateIsDelete(CommonEnum.IsDeleted isDeleted, string ids)
         {
@@ -282,10 +282,10 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
         }
 
         /// <summary>
-        /// 删除菜单
+        /// 刪除菜單
         /// </summary>
-        /// <param name="status">菜单状态</param>
-        /// <param name="ids">菜单ID字符串,多个以逗号隔开</param>
+        /// <param name="status">菜單狀態</param>
+        /// <param name="ids">菜單ID字符串,多個以逗號隔開</param>
         /// <returns></returns>
         private ResponseModel UpdateStatus(UserStatus status, string ids)
         {
@@ -311,7 +311,7 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
             }).ToList();
             var root = new MenuTree
             {
-                Title = "顶级菜单",
+                Title = "頂級菜單",
                 Guid = Guid.Empty.ToString(),
                 ParentGuid = null
             };

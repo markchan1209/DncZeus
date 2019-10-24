@@ -1,8 +1,8 @@
-﻿/******************************************
+/******************************************
  * AUTHOR:          Rector
  * CREATEDON:       2018-09-26
- * OFFICIAL_SITE:    码友网(https://codedefault.com)--专注.NET/.NET Core
- * 版权所有，请勿删除
+ * OFFICIAL_SITE:    碼友網(https://codedefault.com)--專注.NET/.NET Core
+ * 版權所有，請勿刪除
  ******************************************/
 
 using AutoMapper;
@@ -83,8 +83,8 @@ namespace DncZeus.Api
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddDbContext<DncZeusDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
-                // 如果使用SQL Server 2008数据库，请添加UseRowNumberForPaging的选项
-                // 参考资料:https://github.com/aspnet/EntityFrameworkCore/issues/4616
+                // 如果使用SQL Server 2008數據庫，請添加UseRowNumberForPaging的選項
+                // 參考資料:https://github.com/aspnet/EntityFrameworkCore/issues/4616
                 //options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),b=>b.UseRowNumberForPaging())
                 );
 
@@ -97,7 +97,7 @@ namespace DncZeus.Api
                 c.IncludeXmlComments(xmlPath);
             });
 
-            // 注入日志
+            // 注入日誌
             services.AddLogging(config => 
             {
                 config.AddLog4Net();

@@ -1,8 +1,8 @@
-﻿/******************************************
+/******************************************
  * AUTHOR:          Rector
  * CREATEDON:       2018-09-26
- * OFFICIAL_SITE:    码友网(https://codedefault.com)--专注.NET/.NET Core
- * 版权所有，请勿删除
+ * OFFICIAL_SITE:    碼友網(https://codedefault.com)--專注.NET/.NET Core
+ * 版權所有，請勿刪除
  ******************************************/
 
 using System;
@@ -21,13 +21,13 @@ namespace DncZeus.Api.Auth
     public static class JwtBearerAuthenticationExtension
     {
         /// <summary>
-        /// 注册JWT Bearer认证服务的静态扩展方法
+        /// 註冊JWT Bearer認證服務的靜態擴展方法
         /// </summary>
         /// <param name="services"></param>
-        /// <param name="appSettings">JWT授权的配置项</param>
+        /// <param name="appSettings">JWT授權的配置項</param>
         public static void AddJwtBearerAuthentication(this IServiceCollection services, AppAuthenticationSettings appSettings)
         {
-            //使用应用密钥得到一个加密密钥字节数组
+            //使用應用密鑰得到一個加密密鑰字節數組
             var key = Encoding.ASCII.GetBytes(appSettings.Secret);
             services.AddAuthentication(x =>
             {

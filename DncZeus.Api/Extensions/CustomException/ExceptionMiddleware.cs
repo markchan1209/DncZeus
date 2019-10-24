@@ -1,8 +1,8 @@
-﻿/******************************************
+/******************************************
  * AUTHOR:          Rector
  * CREATEDON:       2018-09-26
- * OFFICIAL_SITE:    码友网(https://codedefault.com)--专注.NET/.NET Core
- * 版权所有，请勿删除
+ * OFFICIAL_SITE:    碼友網(https://codedefault.com)--專注.NET/.NET Core
+ * 版權所有，請勿刪除
  ******************************************/
 
 using Microsoft.AspNetCore.Http;
@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace DncZeus.Api.Extensions.CustomException
 {
     /// <summary>
-    /// 异常中间件
+    /// 異常中間件
     /// </summary>
     public class ExceptionMiddleware
     {
@@ -43,12 +43,12 @@ namespace DncZeus.Api.Extensions.CustomException
         {
             var error = new ErrorDetails {
                 StatusCode= 500,
-                Message=$"资源服务器忙,请稍候再试,原因:{exception.Message}"
+                Message=$"資源服務器忙,請稍候再試,原因:{exception.Message}"
             };
             if (exception is UnauthorizeException)
             {
                 error.StatusCode= (int)HttpStatusCode.Unauthorized;
-                error.Message = "未授权的访问(未登录或者登录已超时)";
+                error.Message = "未授權的訪問(未登錄或者登錄已超時)";
             }
 
             context.Response.ContentType = "application/json";

@@ -1,8 +1,8 @@
-﻿/******************************************
+/******************************************
  * AUTHOR:          Rector
  * CREATEDON:       2018-09-26
- * OFFICIAL_SITE:    码友网(https://codedefault.com)--专注.NET/.NET Core
- * 版权所有，请勿删除
+ * OFFICIAL_SITE:    碼友網(https://codedefault.com)--專注.NET/.NET Core
+ * 版權所有，請勿刪除
  ******************************************/
 
 using DncZeus.Api.Entities;
@@ -51,22 +51,22 @@ namespace DncZeus.Api.Controllers
                 user = _dbContext.DncUser.FirstOrDefault(x => x.LoginName == username.Trim());
                 if (user == null || user.IsDeleted == IsDeleted.Yes)
                 {
-                    response.SetFailed("用户不存在");
+                    response.SetFailed("用戶不存在");
                     return Ok(response);
                 }
                 if (user.Password != password.Trim())
                 {
-                    response.SetFailed("密码不正确");
+                    response.SetFailed("密碼不正確");
                     return Ok(response);
                 }
                 if (user.IsLocked == IsLocked.Locked)
                 {
-                    response.SetFailed("账号已被锁定");
+                    response.SetFailed("賬號已被鎖定");
                     return Ok(response);
                 }
                 if (user.Status == UserStatus.Forbidden)
                 {
-                    response.SetFailed("账号已被禁用");
+                    response.SetFailed("賬號已被禁用");
                     return Ok(response);
                 }
             }

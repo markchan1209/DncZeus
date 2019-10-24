@@ -1,8 +1,8 @@
-﻿/******************************************
+/******************************************
  * AUTHOR:          Rector
  * CREATEDON:       2018-09-26
- * OFFICIAL_SITE:    码友网(https://codedefault.com)--专注.NET/.NET Core
- * 版权所有，请勿删除
+ * OFFICIAL_SITE:    碼友網(https://codedefault.com)--專注.NET/.NET Core
+ * 版權所有，請勿刪除
  ******************************************/
 
 using DncZeus.Api.Extensions;
@@ -31,7 +31,7 @@ namespace DncZeus.Api.Controllers.Api.V1
         }
 
         /// <summary>
-        /// 初始化消息标题列表
+        /// 初始化消息標題列表
         /// </summary>
         /// <returns></returns>
         [HttpGet]
@@ -46,7 +46,7 @@ namespace DncZeus.Api.Controllers.Api.V1
         }
 
         /// <summary>
-        /// 获取指定ID的消息内容
+        /// 獲取指定ID的消息內容
         /// </summary>
         /// <returns></returns>
         [HttpGet("{msgid:int}")]
@@ -54,12 +54,12 @@ namespace DncZeus.Api.Controllers.Api.V1
         {
             var response = ResponseModelFactory.CreateInstance;
            
-            response.SetData($"消息[{msgid}]内容");
+            response.SetData($"消息[{msgid}]內容");
             return Ok(response);
         }
 
         /// <summary>
-        /// 将消息标为已读
+        /// 將消息標為已讀
         /// </summary>
         /// <returns></returns>
         [HttpGet("/api/v1/message/has_read/{msgid}")]
@@ -70,7 +70,7 @@ namespace DncZeus.Api.Controllers.Api.V1
         }
 
         /// <summary>
-        /// 删除已读消息
+        /// 刪除已讀消息
         /// </summary>
         /// <returns></returns>
         [HttpGet("/api/v1/message/remove_readed/{msgid}")]
@@ -81,7 +81,7 @@ namespace DncZeus.Api.Controllers.Api.V1
         }
 
         /// <summary>
-        /// 恢复已删消息
+        /// 恢復已刪消息
         /// </summary>
         /// <returns></returns>
         [HttpGet("/api/v1/message/restore/{msgid}")]

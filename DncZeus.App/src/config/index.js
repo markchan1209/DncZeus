@@ -1,20 +1,20 @@
 export default {
   /**
-   * @description 配置显示在浏览器标签的title
+   * @description 配置顯示在瀏覽器標籤的title
    */
-  title: 'DncZeus通用后台权限管理框架',
+  title: 'DncZeus通用後台權限管理框架',
   /**
-   * @description token在Cookie中存储的天数，默认1天
+   * @description token在Cookie中存儲的天數，默認1天
    */
   cookieExpires: 7,
   /**
-   * @description 是否使用国际化，默认为false
-   *              如果不使用，则需要在路由中给需要在菜单中展示的路由设置meta: {title: 'xxx'}
-   *              用来在菜单中显示文字
+   * @description 是否使用國際化，默認為false
+   *              如果不使用，則需要在路由中給需要在菜單中展示的路由設置meta: {title: 'xxx'}
+   *              用來在菜單中顯示文字
    */
   useI18n: false,
   /**
-   * @description api请求基础路径
+   * @description api請求基礎路徑
    */
   baseUrl: {
     dev: 'http://localhost:54321/',
@@ -26,16 +26,16 @@ export default {
     pro: 'http://localhost:54321/api/oauth/auth'
   },
   /**
-   * @description 默认打开的首页的路由name值，默认为home
+   * @description 默認打開的首頁的路由name值，默認為home
    */
   homeName: 'home',
   /**
-   * @description 需要加载的插件
+   * @description 需要加載的插件
    */
   plugin: {
     'error-store': {
-      showInHeader: true, // 设为false后不会在顶部显示错误日志徽标
-      developmentOff: true // 设为true后在开发环境不会收集错误信息，方便开发中排查错误
+      showInHeader: true, // 設為false後不會在頂部顯示錯誤日誌徽標
+      developmentOff: true // 設為true後在開發環境不會收集錯誤信息，方便開發中排查錯誤
     }
   }
 }

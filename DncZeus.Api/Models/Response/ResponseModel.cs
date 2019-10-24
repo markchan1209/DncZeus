@@ -1,19 +1,19 @@
-﻿/******************************************
+/******************************************
  * AUTHOR:          Rector
  * CREATEDON:       2018-09-26
- * OFFICIAL_SITE:    码友网(https://codedefault.com)--专注.NET/.NET Core
- * 版权所有，请勿删除
+ * OFFICIAL_SITE:    碼友網(https://codedefault.com)--專注.NET/.NET Core
+ * 版權所有，請勿刪除
  ******************************************/
 
 namespace DncZeus.Api.Models.Response
 {
     /// <summary>
-    /// 请求响应实体
+    /// 請求響應實體
     /// </summary>
     public class ResponseModel
     {
         /// <summary>
-        /// 请求响应实体类
+        /// 請求響應實體類
         /// </summary>
         public ResponseModel()
         {
@@ -21,20 +21,20 @@ namespace DncZeus.Api.Models.Response
             Message = "操作成功";
         }
         /// <summary>
-        /// 响应代码
+        /// 響應代碼
         /// </summary>
         public int Code { get; set; }
         /// <summary>
-        /// 响应消息内容
+        /// 響應消息內容
         /// </summary>
         public string Message { get; set; }
         /// <summary>
-        /// 返回的响应数据
+        /// 返回的響應數據
         /// </summary>
         public object Data { get; set; }
 
         /// <summary>
-        /// 设置响应状态为成功
+        /// 設置響應狀態為成功
         /// </summary>
         /// <param name="message"></param>
         public void SetSuccess(string message = "成功")
@@ -43,57 +43,57 @@ namespace DncZeus.Api.Models.Response
             Message = message;
         }
         /// <summary>
-        /// 设置响应状态为失败
+        /// 設置響應狀態為失敗
         /// </summary>
         /// <param name="message"></param>
-        public void SetFailed(string message = "失败")
+        public void SetFailed(string message = "失敗")
         {
             Message = message;
             Code = 999;
         }
 
         /// <summary>
-        /// 设置响应状态为体验版(返回失败结果)
+        /// 設置響應狀態為體驗版(返回失敗結果)
         /// </summary>
         /// <param name="message"></param>
-        public void SetIsTrial(string message = "体验版,功能已被关闭")
+        public void SetIsTrial(string message = "體驗版,功能已被關閉")
         {
             Message = message;
             Code = 999;
         }
 
         /// <summary>
-        /// 设置响应状态为错误
+        /// 設置響應狀態為錯誤
         /// </summary>
         /// <param name="message"></param>
-        public void SetError(string message = "错误")
+        public void SetError(string message = "錯誤")
         {
             Code = 500;
             Message = message;
         }
 
         /// <summary>
-        /// 设置响应状态为未知资源
+        /// 設置響應狀態為未知資源
         /// </summary>
         /// <param name="message"></param>
-        public void SetNotFound(string message = "未知资源")
+        public void SetNotFound(string message = "未知資源")
         {
             Message = message;
             Code = 404;
         }
 
         /// <summary>
-        /// 设置响应状态为无权限
+        /// 設置響應狀態為無權限
         /// </summary>
         /// <param name="message"></param>
-        public void SetNoPermission(string message = "无权限")
+        public void SetNoPermission(string message = "無權限")
         {
             Message = message;
             Code = 401;
         }
 
         /// <summary>
-        /// 设置响应数据
+        /// 設置響應數據
         /// </summary>
         /// <param name="data"></param>
         public void SetData(object data)

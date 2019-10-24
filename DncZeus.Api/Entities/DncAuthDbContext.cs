@@ -1,8 +1,8 @@
-﻿/******************************************
+/******************************************
  * AUTHOR:          Rector
  * CREATEDON:       2018-09-26
- * OFFICIAL_SITE:    码友网(https://codedefault.com)--专注.NET/.NET Core
- * 版权所有，请勿删除
+ * OFFICIAL_SITE:    碼友網(https://codedefault.com)--專注.NET/.NET Core
+ * 版權所有，請勿刪除
  ******************************************/
 
 using DncZeus.Api.Entities.QueryModels.DncPermission;
@@ -24,7 +24,7 @@ namespace DncZeus.Api.Entities
 
         }
         /// <summary>
-        /// 用户
+        /// 用戶
         /// </summary>
         public DbSet<DncUser> DncUser { get; set; }
         /// <summary>
@@ -32,24 +32,24 @@ namespace DncZeus.Api.Entities
         /// </summary>
         public DbSet<DncRole> DncRole { get; set; }
         /// <summary>
-        /// 菜单
+        /// 菜單
         /// </summary>
         public DbSet<DncMenu> DncMenu { get; set; }
         /// <summary>
-        /// 图标
+        /// 圖標
         /// </summary>
         public DbSet<DncIcon> DncIcon { get; set; }
 
         /// <summary>
-        /// 用户-角色多对多映射
+        /// 用戶-角色多對多映射
         /// </summary>
         public DbSet<DncUserRoleMapping> DncUserRoleMapping { get; set; }
         /// <summary>
-        /// 权限
+        /// 權限
         /// </summary>
         public DbSet<DncPermission> DncPermission { get; set; }
         /// <summary>
-        /// 角色-权限多对多映射
+        /// 角色-權限多對多映射
         /// </summary>
         public DbSet<DncRolePermissionMapping> DncRolePermissionMapping { get; set; }
 

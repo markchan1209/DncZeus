@@ -11,16 +11,16 @@
 [![npm](https://img.shields.io/npm/l/express.svg)]()
 
 
-## 当前版本：v2.0-beta.3
-[更新日志](https://github.com/iview/iview-admin/releases)
+## 當前版本：v2.0-beta.3
+[更新日誌](https://github.com/iview/iview-admin/releases)
 
-[使用文档](https://lison16.github.io/iview-admin-doc/#/)
+[使用文檔](https://lison16.github.io/iview-admin-doc/#/)
 
-[在线访问](https://admin.iviewui.com/)
+[在線訪問](https://admin.iviewui.com/)
 
-[简化版模板](https://github.com/iview/iview-admin/tree/template)
+[簡化版模板](https://github.com/iview/iview-admin/tree/template)
 
-`注：在线版本会在开发版本新小版本发布后更新到相应版本，所以如果想体验最新版本iview-admin，请clone完整项目代码到本地运行。`
+`註：在線版本會在開發版本新小版本發佈後更新到相應版本，所以如果想體驗最新版本iview-admin，請clone完整項目代碼到本地運行。`
 
 ## Install
 ```bush
@@ -37,76 +37,76 @@ npm run dev
 npm run build
 ```
 
-## 简介
-&emsp;&emsp;iView admin是基于Vue.js，搭配使用[iView](https://www.iviewui.com) UI组件库形成的一套后台集成解决方案，由TalkingData前端可视化团队部分成员开发维护。iView admin遵守iView设计和开发约定，风格统一，设计考究，并且更多功能在不停开发中。
-如果您想查看iview-admin的更新动态，您可以到[更新日志](https://github.com/iview/iview-admin/releases)查看了解最新更新；如果您是新手，想快速入手iview-admin，您可以到[使用教程](https://github.com/iview/iview-admin/wiki)查看讲解；如果您想在线体验iview-admin，您可以到[在线访问](https://admin.iviewui.com/)体验。如果你只是想要一个清醒爽朗的界面，那你可以下载[简化版模板](https://github.com/iview/iview-admin/tree/template)来做开发。
+## 簡介
+&emsp;&emsp;iView admin是基於Vue.js，搭配使用[iView](https://www.iviewui.com) UI組件庫形成的一套後台集成解決方案，由TalkingData前端可視化團隊部分成員開發維護。iView admin遵守iView設計和開發約定，風格統一，設計考究，並且更多功能在不停開發中。
+如果您想查看iview-admin的更新動態，您可以到[更新日誌](https://github.com/iview/iview-admin/releases)查看瞭解最新更新；如果您是新手，想快速入手iview-admin，您可以到[使用教程](https://github.com/iview/iview-admin/wiki)查看講解；如果您想在線體驗iview-admin，您可以到[在線訪問](https://admin.iviewui.com/)體驗。如果你只是想要一個清醒爽朗的界面，那你可以下載[簡化版模板](https://github.com/iview/iview-admin/tree/template)來做開發。
 
 ## 功能
 
-- 登录/登出
-- 权限管理
-    - 列表过滤
-    - 权限切换
-- 多语言切换
-- 组件
-    - 富文本编辑器
-    - Markdown编辑器
-    - 城市级联
-    - 图片预览编辑
+- 登錄/登出
+- 權限管理
+    - 列表過濾
+    - 權限切換
+- 多語言切換
+- 組件
+    - 富文本編輯器
+    - Markdown編輯器
+    - 城市級聯
+    - 圖片預覽編輯
     - 可拖拽列表
-    - 文件上传
-    - 数字渐变
+    - 文件上傳
+    - 數字漸變
     - split-pane
-- 表单编辑
-    - 文章发布
+- 表單編輯
+    - 文章發佈
     - 工作流
 - 表格
     - 可拖拽排序
-    - 可编辑表格
-        - 行内编辑
-        - 单元格编辑
+    - 可編輯表格
+        - 行內編輯
+        - 單元格編輯
     - 可搜索表格
-    - 表格导出数据
-        - 导出为Csv文件
-        - 导出为Xls文件
-    - 表格转图片
-- 错误页面
-    - 403页面
-    - 404页面
-    - 500页面
-- 高级路由
-    - 动态路由
-    - 带参页面
-- 换肤
-- 收缩侧边栏
-- tag标签导航
-- 面包屑导航
+    - 表格導出數據
+        - 導出為Csv文件
+        - 導出為Xls文件
+    - 表格轉圖片
+- 錯誤頁面
+    - 403頁面
+    - 404頁面
+    - 500頁面
+- 高級路由
+    - 動態路由
+    - 帶參頁面
+- 換膚
+- 收縮側邊欄
+- tag標籤導航
+- 麵包屑導航
 - 全屏/退出全屏
-- 锁屏
+- 鎖屏
 - 消息中心
-- 个人中心
+- 個人中心
 
-## 文件结构
+## 文件結構
 ```shell
 .
-├── build  项目构建配置
-├── config  开发相关配置
-├── public  打包所需静态资源
+├── build  項目構建配置
+├── config  開發相關配置
+├── public  打包所需靜態資源
 └── src
-    ├── api  AJAX请求
-    └── assets  项目静态资源
-        ├── icons  自定义图标资源
-        └── images  图片资源
-    ├── components  业务组件
-    ├── config  项目运行配置
-    ├── directive  自定义指令
-    ├── libs  封装工具函数
-    ├── locale  多语言文件
-    ├── mock  mock模拟数据
+    ├── api  AJAX請求
+    └── assets  項目靜態資源
+        ├── icons  自定義圖標資源
+        └── images  圖片資源
+    ├── components  業務組件
+    ├── config  項目運行配置
+    ├── directive  自定義指令
+    ├── libs  封裝工具函數
+    ├── locale  多語言文件
+    ├── mock  mock模擬數據
     ├── router  路由配置
     ├── store  Vuex配置
-    ├── view  页面文件
-    └── tests  测试相关
+    ├── view  頁面文件
+    └── tests  測試相關
 ```
 
 ## Links
@@ -118,31 +118,31 @@ npm run build
 
 ## 效果展示
 
-- 响应式布局首页
+- 響應式佈局首頁
 ![image](https://github.com/iview/iview-admin/raw/dev/github-gif/home.gif)
 
-- 标签导航
+- 標籤導航
 ![image](https://github.com/iview/iview-admin/raw/dev/github-gif/page-tags.gif)
 
-- 权限管理
+- 權限管理
 ![image](https://github.com/iview/iview-admin/raw/dev/github-gif/access.gif)
 
 - 可拖拽列表
 ![image](https://github.com/iview/iview-admin/raw/dev/github-gif/dragable-list.gif)
 
-- 图片预览编辑
+- 圖片預覽編輯
 ![image](https://github.com/iview/iview-admin/raw/dev/github-gif/image-editor.gif)
 
-- 文件上传
+- 文件上傳
 ![image](https://github.com/iview/iview-admin/raw/dev/github-gif/upload.gif)
 
-- 数字渐变
+- 數字漸變
 ![image](https://github.com/iview/iview-admin/raw/dev/github-gif/count-to.gif)
 
 - split-pane
 ![image](https://github.com/iview/iview-admin/raw/dev/github-gif/split-pane.gif)
 
-- 文章发布
+- 文章發佈
 ![image](https://github.com/iview/iview-admin/raw/dev/github-gif/article-publish.gif)
 
 - 工作流
@@ -151,31 +151,31 @@ npm run build
 - 可拖拽表格
 ![image](https://github.com/iview/iview-admin/raw/dev/github-gif/dragable-table.gif)
 
-- 可编辑表格
+- 可編輯表格
 ![image](https://github.com/iview/iview-admin/raw/dev/github-gif/editable-table.gif)
 
-- 表格导出数据
+- 表格導出數據
 ![image](https://github.com/iview/iview-admin/raw/dev/github-gif/exportable-table.gif)
 
-- 表格转图片
+- 表格轉圖片
 ![image](https://github.com/iview/iview-admin/raw/dev/github-gif/table2image.gif)
 
-- 错误页面
+- 錯誤頁面
 ![image](https://github.com/iview/iview-admin/raw/dev/github-gif/error-page.gif)
 
-- 锁屏
+- 鎖屏
 ![image](https://github.com/iview/iview-admin/raw/dev/github-gif/locking.gif)
 
-- 可收缩侧边栏
+- 可收縮側邊欄
 ![image](https://github.com/iview/iview-admin/raw/dev/github-gif/sidebarmenu.gif)
 
-- 主题切换
+- 主題切換
 ![image](https://github.com/iview/iview-admin/raw/dev/github-gif/theme.gif)
 
 - 消息中心
 ![image](https://github.com/iview/iview-admin/raw/dev/github-gif/message.gif)
 
-### 💖💖 If you find this project helpful, maybe you can buy me a coffee. 💖💖
+### ߒ氟■If you find this project helpful, maybe you can buy me a coffee. ߒ氟▍
 ![image](https://github.com/iview/iview-admin/raw/dev/github-gif/code.png)
 
 

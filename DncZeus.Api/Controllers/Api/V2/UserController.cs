@@ -1,4 +1,4 @@
-﻿using DncZeus.Api.Entities;
+using DncZeus.Api.Entities;
 using DncZeus.Api.Extensions;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;

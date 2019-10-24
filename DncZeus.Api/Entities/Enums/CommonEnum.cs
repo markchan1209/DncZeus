@@ -1,19 +1,19 @@
-﻿/******************************************
+/******************************************
  * AUTHOR:          Rector
  * CREATEDON:       2018-09-26
- * OFFICIAL_SITE:    码友网(https://codedefault.com)--专注.NET/.NET Core
- * 版权所有，请勿删除
+ * OFFICIAL_SITE:    碼友網(https://codedefault.com)--專注.NET/.NET Core
+ * 版權所有，請勿刪除
  ******************************************/
 
 namespace DncZeus.Api.Entities.Enums
 {
     /// <summary>
-    /// 通用枚举类
+    /// 通用枚舉類
     /// </summary>
     public class CommonEnum
     {
         /// <summary>
-        /// 是否已删
+        /// 是否已刪
         /// </summary>
         public enum IsDeleted
         {
@@ -32,16 +32,16 @@ namespace DncZeus.Api.Entities.Enums
         }
 
         /// <summary>
-        /// 是否已被锁定
+        /// 是否已被鎖定
         /// </summary>
         public enum IsLocked
         {
             /// <summary>
-            /// 未锁定
+            /// 未鎖定
             /// </summary>
             UnLocked = 0,
             /// <summary>
-            /// 已锁定
+            /// 已鎖定
             /// </summary>
             Locked = 1
         }
@@ -63,7 +63,7 @@ namespace DncZeus.Api.Entities.Enums
 
 
         /// <summary>
-        /// 用户状态
+        /// 用戶狀態
         /// </summary>
         public enum Status
         {
@@ -82,22 +82,22 @@ namespace DncZeus.Api.Entities.Enums
         }
 
         /// <summary>
-        /// 权限类型
+        /// 權限類型
         /// </summary>
         public enum PermissionType
         {
             /// <summary>
-            /// 菜单
+            /// 菜單
             /// </summary>
             Menu = 0,
             /// <summary>
-            /// 按钮/操作/功能
+            /// 按鈕/操作/功能
             /// </summary>
             Action = 1
         }
 
         /// <summary>
-        /// 是否枚举
+        /// 是否枚舉
         /// </summary>
         public enum YesOrNo
         {

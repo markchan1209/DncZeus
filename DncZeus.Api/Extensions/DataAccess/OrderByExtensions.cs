@@ -1,10 +1,10 @@
-﻿using System.Linq;
+using System.Linq;
 using System.Linq.Expressions;
 
 namespace DncZeus.Api.Extensions.DataAccess
 {
     /// <summary>
-    /// 排序静态扩展类
+    /// 排序靜態擴展類
     /// </summary>
     public static class OrderByExtensions
     {

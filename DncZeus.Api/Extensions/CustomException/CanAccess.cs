@@ -1,8 +1,8 @@
-﻿/******************************************
+/******************************************
  * AUTHOR:          Rector
  * CREATEDON:       2019-01-08
- * OFFICIAL_SITE:    码友网(https://codedefault.com)--专注.NET/.NET Core
- * 版权所有，请勿删除
+ * OFFICIAL_SITE:    碼友網(https://codedefault.com)--專注.NET/.NET Core
+ * 版權所有，請勿刪除
  ******************************************/
 
 using System;
@@ -12,7 +12,7 @@ using System.Linq;
 namespace DncZeus.Api.Extensions.CustomException
 {
     /// <summary>
-    /// 用户可以访问的控制器及操作权限
+    /// 用戶可以訪問的控制器及操作權限
     /// </summary>
     public class CanAccess
     {
@@ -27,7 +27,7 @@ namespace DncZeus.Api.Extensions.CustomException
     }
 
     /// <summary>
-    /// 用户拥有的API操作权限
+    /// 用戶擁有的API操作權限
     /// </summary>
     public class OwnedApiPermission
     {
@@ -39,12 +39,12 @@ namespace DncZeus.Api.Extensions.CustomException
             CanAccesses = new List<CanAccess>();
         }
         /// <summary>
-        /// 可以访问的API控制器集合
+        /// 可以訪問的API控制器集合
         /// </summary>
         public List<CanAccess> CanAccesses { get; set; }
 
         /// <summary>
-        /// 是否可以访问
+        /// 是否可以訪問
         /// </summary>
         /// <param name="controller"></param>
         /// <param name="action"></param>

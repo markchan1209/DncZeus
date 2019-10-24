@@ -1,8 +1,8 @@
-﻿/******************************************
+/******************************************
  * AUTHOR:          Rector
  * CREATEDON:       2018-09-26
- * OFFICIAL_SITE:    码友网(https://codedefault.com)--专注.NET/.NET Core
- * 版权所有，请勿删除
+ * OFFICIAL_SITE:    碼友網(https://codedefault.com)--專注.NET/.NET Core
+ * 版權所有，請勿刪除
  ******************************************/
 
 using DncZeus.Api.Entities;
@@ -16,11 +16,11 @@ namespace DncZeus.Api.RequestPayload.Rbac.User
     public class UserRequestPayload : RequestPayload
     {
         /// <summary>
-        /// 是否已被删除
+        /// 是否已被刪除
         /// </summary>
         public IsDeleted IsDeleted { get; set; }
         /// <summary>
-        /// 用户状态
+        /// 用戶狀態
         /// </summary>
         public UserStatus Status { get; set; }
     }

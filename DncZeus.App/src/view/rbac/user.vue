@@ -18,14 +18,14 @@
                       search
                       :clearable="true"
                       v-model="stores.user.query.kw"
-                      placeholder="输入关键字搜索..."
+                      placeholder="輸入關鍵字搜索..."
                       @on-search="handleSearchUser()"
                     >
                       <Select
                         slot="prepend"
                         v-model="stores.user.query.isDeleted"
                         @on-change="handleSearchUser"
-                        placeholder="删除状态"
+                        placeholder="刪除狀態"
                         style="width:60px;"
                       >
                         <Option
@@ -38,7 +38,7 @@
                         slot="prepend"
                         v-model="stores.user.query.status"
                         @on-change="handleSearchUser"
-                        placeholder="用户状态"
+                        placeholder="用戶狀態"
                         style="width:60px;"
                       >
                         <Option
@@ -56,13 +56,13 @@
                   <Button
                     class="txt-danger"
                     icon="md-trash"
-                    title="删除"
+                    title="刪除"
                     @click="handleBatchCommand('delete')"
                   ></Button>
                   <Button
                     class="txt-success"
                     icon="md-redo"
-                    title="恢复"
+                    title="恢復"
                     @click="handleBatchCommand('recover')"
                   ></Button>
                   <Button
@@ -74,7 +74,7 @@
                   <Button
                     class="txt-success"
                     icon="md-checkmark"
-                    title="启用"
+                    title="啟用"
                     @click="handleBatchCommand('normal')"
                   ></Button>
                   <Button icon="md-refresh" title="刷新" @click="handleRefresh"></Button>
@@ -84,8 +84,8 @@
                   icon="md-create"
                   type="primary"
                   @click="handleShowCreateWindow"
-                  title="新增用户"
-                >新增用户</Button>
+                  title="新增用戶"
+                >新增用戶</Button>
               </Col>
             </Row>
           </section>
@@ -116,14 +116,14 @@
             <Poptip
               confirm
               :transfer="true"
-              title="确定要删除吗?"
+              title="確定要刪除嗎?"
               @on-ok="handleDelete(row)"
               >
-              <Tooltip placement="top" content="删除" :delay="1000" :transfer="true">
+              <Tooltip placement="top" content="刪除" :delay="1000" :transfer="true">
                 <Button type="error" size="small" shape="circle" icon="md-trash"></Button>
               </Tooltip>
             </Poptip>
-            <Tooltip placement="top" content="编辑" :delay="1000" :transfer="true">
+            <Tooltip placement="top" content="編輯" :delay="1000" :transfer="true">
               <Button v-can="'edit'" type="primary" size="small" shape="circle" icon="md-create" @click="handleEdit(row)"></Button>
             </Tooltip>
             <Tooltip placement="top" content="分配角色" :delay="1000" :transfer="true">
@@ -144,24 +144,24 @@
       <Form :model="formModel.fields" ref="formUser" :rules="formModel.rules" label-position="top">
         <Row :gutter="16">
           <Col span="12">
-            <FormItem label="登录名" prop="loginName">
-              <Input v-model="formModel.fields.loginName" placeholder="请输入登录名"/>
+            <FormItem label="登錄名" prop="loginName">
+              <Input v-model="formModel.fields.loginName" placeholder="請輸入登錄名"/>
             </FormItem>
           </Col>
           <Col span="12">
-            <FormItem label="显示名" prop="displayName">
-              <Input v-model="formModel.fields.displayName" placeholder="请输入显示名"/>
+            <FormItem label="顯示名" prop="displayName">
+              <Input v-model="formModel.fields.displayName" placeholder="請輸入顯示名"/>
             </FormItem>
           </Col>
         </Row>
         <Row :gutter="16">
           <Col span="12">
-            <FormItem label="密码" prop="password">
-              <Input type="password" v-model="formModel.fields.password" placeholder="请输入登录密码"/>
+            <FormItem label="密碼" prop="password">
+              <Input type="password" v-model="formModel.fields.password" placeholder="請輸入登錄密碼"/>
             </FormItem>
           </Col>
           <Col span="12">
-            <FormItem label="用户类型">
+            <FormItem label="用戶類型">
               <Select v-model="formModel.fields.userType">
                 <Option
                   v-for="item in stores.user.sources.userTypes"
@@ -174,7 +174,7 @@
         </Row>
         <Row :gutter="16">
           <Col span="12">
-            <FormItem label="用户状态" label-position="left">
+            <FormItem label="用戶狀態" label-position="left">
               <!-- <RadioGroup v-model="formModel.fields.status" type="button">
                               <Radio v-for="item in stores.user.sources.statusFormSources" :label="item.text" :key="item.value"></Radio>
               </RadioGroup>-->
@@ -190,8 +190,8 @@
             </FormItem>
           </Col>
         </Row>
-        <FormItem label="备注" label-position="top">
-          <Input type="textarea" v-model="formModel.fields.desc" :rows="4" placeholder="用户备注信息"/>
+        <FormItem label="備註" label-position="top">
+          <Input type="textarea" v-model="formModel.fields.desc" :rows="4" placeholder="用戶備註信息"/>
         </FormItem>
       </Form>
       <div class="demo-drawer-footer">
@@ -200,7 +200,7 @@
       </div>
     </Drawer>
     <Drawer
-      title="用户角色分配"
+      title="用戶角色分配"
       v-model="formAssignRole.opened"
       width="500"
       :mask-closable="true"
@@ -212,7 +212,7 @@
             :data="formAssignRole.roles"
             :target-keys="formAssignRole.ownedRoles"
             :render-format="renderOwnedRoles"
-            :titles="['未获得的角色','已获得的角色']"
+            :titles="['未獲得的角色','已獲得的角色']"
             @on-change="handleChangeOwnedRolesChanged"
           ></Transfer>
         </FormItem>
@@ -245,14 +245,14 @@ export default {
   data() {
     return {
       commands: {
-        delete: { name: "delete", title: "删除" },
-        recover: { name: "recover", title: "恢复" },
+        delete: { name: "delete", title: "刪除" },
+        recover: { name: "recover", title: "恢復" },
         forbidden: { name: "forbidden", title: "禁用" },
-        normal: { name: "normal", title: "启用" }
+        normal: { name: "normal", title: "啟用" }
       },
       formModel: {
         opened: false,
-        title: "创建用户",
+        title: "創建用戶",
         mode: "create",
         selection: [],
         fields: {
@@ -274,7 +274,7 @@ export default {
         },
         rules: {
           loginName: [
-            { type: "string", required: true, message: "请输入登录名", min: 3 }
+            { type: "string", required: true, message: "請輸入登錄名", min: 3 }
           ],
           displayName: [],
           password: []
@@ -305,14 +305,14 @@ export default {
           },
           sources: {
             userTypes: [
-              { value: 0, text: "超级管理员" },
-              { value: 1, text: "管理员" },
-              { value: 2, text: "普通用户" }
+              { value: 0, text: "超級管理員" },
+              { value: 1, text: "管理員" },
+              { value: 2, text: "普通用戶" }
             ],
             isDeletedSources: [
               { value: -1, text: "全部" },
               { value: 0, text: "正常" },
-              { value: 1, text: "已删" }
+              { value: 1, text: "已刪" }
             ],
             statusSources: [
               { value: -1, text: "全部" },
@@ -326,12 +326,12 @@ export default {
           },
           columns: [
             { type: "selection", width: 50, key: "handle" },
-            { title: "登录名", key: "loginName", width: 250, sortable: true },
-            { title: "显示名", key: "displayName", width: 250 },
-            { title: "用户类型", key: "userType",slot:"userType" },
-            { title: "状态", key: "status", align: "center", width: 120,slot:"status" },
-            { title: "创建时间", width: 120, ellipsis: true, tooltip: true, key: "createdOn" },
-            { title: "创建者", key: "createdByUserName" },
+            { title: "登錄名", key: "loginName", width: 250, sortable: true },
+            { title: "顯示名", key: "displayName", width: 250 },
+            { title: "用戶類型", key: "userType",slot:"userType" },
+            { title: "狀態", key: "status", align: "center", width: 120,slot:"status" },
+            { title: "創建時間", width: 120, ellipsis: true, tooltip: true, key: "createdOn" },
+            { title: "創建者", key: "createdByUserName" },
             { title: "操作", align: "center", width: 150, className: "table-command-column",slot:"action" }
           ],
           data: []
@@ -348,10 +348,10 @@ export default {
   computed: {
     formTitle() {
       if (this.formModel.mode === "create") {
-        return "创建用户";
+        return "創建用戶";
       }
       if (this.formModel.mode === "edit") {
-        return "编辑用户";
+        return "編輯用戶";
       }
       return "";
     },
@@ -439,7 +439,7 @@ export default {
       let _valid = false;
       this.$refs["formUser"].validate(valid => {
         if (!valid) {
-          this.$Message.error("请完善表单信息");
+          this.$Message.error("請完善表單信息");
         } else {
           _valid = true;
         }
@@ -456,7 +456,7 @@ export default {
     },
     doDelete(ids) {
       if (!ids) {
-        this.$Message.warning("请选择至少一条数据");
+        this.$Message.warning("請選擇至少一條數據");
         return;
       }
       deleteUser(ids).then(res => {
@@ -471,15 +471,15 @@ export default {
     },
     handleBatchCommand(command) {
       if (!this.selectedRowsId || this.selectedRowsId.length <= 0) {
-        this.$Message.warning("请选择至少一条数据");
+        this.$Message.warning("請選擇至少一條數據");
         return;
       }
       this.$Modal.confirm({
         title: "操作提示",
         content:
-          "<p>确定要执行当前 [" +
+          "<p>確定要執行當前 [" +
           this.commands[command].title +
-          "] 操作吗?</p>",
+          "] 操作嗎?</p>",
         loading: true,
         onOk: () => {
           this.doBatchCommand(command);
@@ -561,13 +561,13 @@ export default {
       var userTypeText = "未知";
       switch (userType) {
         case 0:
-          userTypeText = "超级管理员";
+          userTypeText = "超級管理員";
           break;
         case 1:
-          userTypeText = "管理员";
+          userTypeText = "管理員";
           break;
         case 2:
-          userTypeText = "普通用户";
+          userTypeText = "普通用戶";
           break;
       }
       return userTypeText;

@@ -1,8 +1,8 @@
-﻿/******************************************
+/******************************************
  * AUTHOR:          Rector
  * CREATEDON:       2018-09-26
- * OFFICIAL_SITE:    码友网(https://codedefault.com)--专注.NET/.NET Core
- * 版权所有，请勿删除
+ * OFFICIAL_SITE:    碼友網(https://codedefault.com)--專注.NET/.NET Core
+ * 版權所有，請勿刪除
  ******************************************/
 
 using static DncZeus.Api.Entities.Enums.CommonEnum;
@@ -10,7 +10,7 @@ using static DncZeus.Api.Entities.Enums.CommonEnum;
 namespace DncZeus.Api.ViewModels.Rbac.DncIcon
 {
     /// <summary>
-    /// 图标的视图类(创建/编辑)
+    /// 圖標的視圖類(創建/編輯)
     /// </summary>
     public class IconCreateViewModel
     {
@@ -19,19 +19,19 @@ namespace DncZeus.Api.ViewModels.Rbac.DncIcon
         /// </summary>
         public int Id { get; set; }
         /// <summary>
-        /// 图标名称
+        /// 圖標名稱
         /// </summary>
         public string Code { get; set; }
         /// <summary>
-        /// 图标的大小，单位是 px
+        /// 圖標的大小，單位是 px
         /// </summary>
         public string Size { get; set; }
         /// <summary>
-        /// 图标颜色
+        /// 圖標顏色
         /// </summary>
         public string Color { get; set; }
         /// <summary>
-        /// 自定义图标
+        /// 自定義圖標
         /// </summary>
         public string Custom { get; set; }
         /// <summary>

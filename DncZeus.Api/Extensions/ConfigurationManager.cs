@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration;
 using System.IO;
 using DncZeus.Api.Configurations;
 
@@ -22,7 +22,7 @@ namespace DncZeus.Api.Extensions
         }
 
         /// <summary>
-        /// 读取配置文件[AppSettings]节点数据
+        /// 讀取配置文件[AppSettings]節點數據
         /// </summary>
         public static AppSettings AppSettings
         {

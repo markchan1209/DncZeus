@@ -1,8 +1,8 @@
-﻿/******************************************
+/******************************************
  * AUTHOR:          Rector
  * CREATEDON:       2018-09-26
- * OFFICIAL_SITE:    码友网(https://codedefault.com)--专注.NET/.NET Core
- * 版权所有，请勿删除
+ * OFFICIAL_SITE:    碼友網(https://codedefault.com)--專注.NET/.NET Core
+ * 版權所有，請勿刪除
  ******************************************/
 
 using AutoMapper;
@@ -26,7 +26,7 @@ using DncZeus.Api.Extensions.CustomException;
 namespace DncZeus.Api.Controllers.Api.V1.Rbac
 {
     /// <summary>
-    /// 权限控制器
+    /// 權限控制器
     /// </summary>
     [Route("api/v1/rbac/[controller]/[action]")]
     [ApiController]
@@ -89,9 +89,9 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
         }
 
         /// <summary>
-        /// 创建权限
+        /// 創建權限
         /// </summary>
-        /// <param name="model">权限视图实体</param>
+        /// <param name="model">權限視圖實體</param>
         /// <returns></returns>
         [HttpPost]
         [ProducesResponseType(200)]
@@ -100,14 +100,14 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
             var response = ResponseModelFactory.CreateInstance;
             if (model.Name.Trim().Length <= 0)
             {
-                response.SetFailed("请输入权限名称");
+                response.SetFailed("請輸入權限名稱");
                 return Ok(response);
             }
             using (_dbContext)
             {
                 if (_dbContext.DncPermission.Count(x => x.ActionCode == model.ActionCode && x.MenuGuid==model.MenuGuid) > 0)
                 {
-                    response.SetFailed("权限操作码已存在");
+                    response.SetFailed("權限操作碼已存在");
                     return Ok(response);
                 }
                 var entity = _mapper.Map<PermissionCreateViewModel, DncPermission>(model);
@@ -124,9 +124,9 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
         }
 
         /// <summary>
-        /// 编辑权限
+        /// 編輯權限
         /// </summary>
-        /// <param name="code">权限惟一编码</param>
+        /// <param name="code">權限惟一編碼</param>
         /// <returns></returns>
         [HttpGet("{code}")]
         [ProducesResponseType(200)]
@@ -145,9 +145,9 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
         }
 
         /// <summary>
-        /// 保存编辑后的权限信息
+        /// 保存編輯後的權限信息
         /// </summary>
-        /// <param name="model">权限视图实体</param>
+        /// <param name="model">權限視圖實體</param>
         /// <returns></returns>
         [HttpPost]
         [ProducesResponseType(200)]
@@ -163,13 +163,13 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
             {
                 if (_dbContext.DncPermission.Count(x => x.ActionCode == model.ActionCode && x.Code != model.Code) > 0)
                 {
-                    response.SetFailed("权限操作码已存在");
+                    response.SetFailed("權限操作碼已存在");
                     return Ok(response);
                 }
                 var entity = _dbContext.DncPermission.FirstOrDefault(x => x.Code == model.Code);
                 if (entity == null)
                 {
-                    response.SetFailed("权限不存在");
+                    response.SetFailed("權限不存在");
                     return Ok(response);
                 }
                 entity.Name = model.Name;
@@ -188,9 +188,9 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
         }
 
         /// <summary>
-        /// 删除权限
+        /// 刪除權限
         /// </summary>
-        /// <param name="ids">权限ID,多个以逗号分隔</param>
+        /// <param name="ids">權限ID,多個以逗號分隔</param>
         /// <returns></returns>
         [HttpGet("{ids}")]
         [ProducesResponseType(200)]
@@ -207,9 +207,9 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
         }
 
         /// <summary>
-        /// 恢复权限
+        /// 恢復權限
         /// </summary>
-        /// <param name="ids">权限ID,多个以逗号分隔</param>
+        /// <param name="ids">權限ID,多個以逗號分隔</param>
         /// <returns></returns>
         [HttpGet("{ids}")]
         [ProducesResponseType(200)]
@@ -223,7 +223,7 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
         /// 批量操作
         /// </summary>
         /// <param name="command"></param>
-        /// <param name="ids">权限ID,多个以逗号分隔</param>
+        /// <param name="ids">權限ID,多個以逗號分隔</param>
         /// <returns></returns>
         [HttpGet]
         [ProducesResponseType(200)]
@@ -261,9 +261,9 @@ namespace DncZeus.Api.Controllers.Api.V1.Rbac
         }
 
         /// <summary>
-        /// 角色-权限菜单树
+        /// 角色-權限菜單樹
         /// </summary>
-        /// <param name="code">角色编码</param>
+        /// <param name="code">角色編碼</param>
         /// <returns></returns>
         [HttpGet("/api/v1/rbac/permission/permission_tree/{code}")]
         public IActionResult PermissionTree(string code)
@@ -305,10 +305,10 @@ WHERE P.IsDeleted=0 AND P.Status=1";
         #region 私有方法
 
         /// <summary>
-        /// 删除权限
+        /// 刪除權限
         /// </summary>
         /// <param name="isDeleted"></param>
-        /// <param name="ids">权限ID字符串,多个以逗号隔开</param>
+        /// <param name="ids">權限ID字符串,多個以逗號隔開</param>
         /// <returns></returns>
         private ResponseModel UpdateIsDelete(IsDeleted isDeleted, string ids)
         {
@@ -325,10 +325,10 @@ WHERE P.IsDeleted=0 AND P.Status=1";
         }
 
         /// <summary>
-        /// 删除权限
+        /// 刪除權限
         /// </summary>
-        /// <param name="status">权限状态</param>
-        /// <param name="ids">权限ID字符串,多个以逗号隔开</param>
+        /// <param name="status">權限狀態</param>
+        /// <param name="ids">權限ID字符串,多個以逗號隔開</param>
         /// <returns></returns>
         private ResponseModel UpdateStatus(UserStatus status, string ids)
         {
@@ -355,10 +355,10 @@ WHERE P.IsDeleted=0 AND P.Status=1";
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="menus">菜单集合</param>
-        /// <param name="permissions">权限集合</param>
-        /// <param name="parentGuid">父级菜单GUID</param>
-        /// <param name="isSuperAdministrator">是否为超级管理员角色</param>
+        /// <param name="menus">菜單集合</param>
+        /// <param name="permissions">權限集合</param>
+        /// <param name="parentGuid">父級菜單GUID</param>
+        /// <param name="isSuperAdministrator">是否為超級管理員角色</param>
         /// <returns></returns>
         public static List<PermissionMenuTree> FillRecursive(this List<PermissionMenuTree> menus, List<DncPermissionWithAssignProperty> permissions, Guid? parentGuid, bool isSuperAdministrator = false)
         {
