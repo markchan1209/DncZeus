@@ -1,4 +1,4 @@
-USE [DncZeus]
+USE [DncZeusPT]
 GO
 /****** Object:  Table [dbo].[DncIcon]    Script Date: 2019-05-04 22:37:03 ******/
 SET ANSI_NULLS ON

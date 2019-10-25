@@ -14,7 +14,7 @@
         </span>
       </Input>
     </FormItem>
-    <FormItem label="測試賬戶">
+    <FormItem label="測試帳戶">
       <RadioGroup v-model="form.userType" type="button" @on-change="handleUserTypeChange">
         <Radio label="超級管理員"></Radio>
         <Radio label="普通用戶"></Radio>
@@ -29,7 +29,7 @@
         :loading="loading"
       >{{btnLoginText}}</Button>
     </FormItem>
-    <p class="login-tip">歡迎使用DncZeus通用權限管理框架</p>
+    <p class="login-tip">歡迎使用誠邦後台管理系統</p>
   </Form>
 </template>
 <script>
@@ -39,7 +39,7 @@ export default {
     userNameRules: {
       type: Array,
       default: () => {
-        return [{ required: true, message: "賬號不能為空", trigger: "blur" }];
+        return [{ required: true, message: "帳號不能為空", trigger: "blur" }];
       }
     },
     passwordRules: {
@@ -60,8 +60,8 @@ export default {
   data() {
     return {
       form: {
-        userName: '',
-        password: '',
+        userName: "",
+        password: "",
         userType: 1
       }
     };
@@ -88,14 +88,14 @@ export default {
         }
       });
     },
-    handleUserTypeChange(val){
-      switch(val){
+    handleUserTypeChange(val) {
+      switch (val) {
         case "超級管理員":
           this.form.userName = "administrator";
           break;
         case "普通用戶":
-        this.form.userName = "admin";
-        break;
+          this.form.userName = "admin";
+          break;
       }
       this.form.password = "111111";
     }

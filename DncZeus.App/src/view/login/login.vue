@@ -8,7 +8,7 @@
     <div class="content content-front">
       <div class="login">
         <div class="login-con">
-          <Card icon="log-in" title="歡迎登錄" :bordered="false">
+          <Card icon="log-in" title="歡迎登錄" :bordered="true">
             <div class="form-con">
               <login-form
                 @on-success-valid="handleSubmit"
@@ -95,7 +95,7 @@ export default {
   font-size: 40px;
 }
 .bg {
-  background: url("../../assets/images/login-bg.jpg");
+  /* background: url("../../assets/images/login-bg.jpg"); */
   height: 100%;
   text-align: center;
   line-height: 100%;

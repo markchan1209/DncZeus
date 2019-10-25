@@ -3,7 +3,7 @@
     <Sider
       hide-trigger
       collapsible
-      :width="256"
+      :width="230"
       :collapsed-width="64"
       v-model="collapsed"
       class="left-sider"
@@ -20,8 +20,14 @@
         <!-- 需要放在菜單上面的內容，如Logo，寫在side-menu標籤內部，如下 -->
         <div class="logo-con">
           <!-- <img v-show="!collapsed" :src="maxLogo" key="max-logo"> -->
-          <span v-show="!collapsed" style="color:#fff;font-size:26px;font-weight:700;text-align:center;display:block;letter-spacing:2px;padding-top:8px;">DncZeus</span>
-          <span v-show="collapsed" style="color:#fff;font-size:30px;font-weight:700;text-align:center;display:block;padding-top:5px;">DZ</span>
+          <span
+            v-show="!collapsed"
+            style="color:#fff;font-size:26px;font-weight:700;text-align:center;display:block;letter-spacing:2px;padding-top:8px;"
+          >誠邦-後台管理</span>
+          <span
+            v-show="collapsed"
+            style="color:#fff;font-size:30px;font-weight:700;text-align:center;display:block;padding-top:5px;"
+          >|||</span>
           <!-- <img v-show="collapsed" :src="minLogo" key="min-logo"> -->
         </div>
       </side-menu>
@@ -29,7 +35,7 @@
     <Layout>
       <Header class="header-con">
         <header-bar :collapsed="collapsed" @on-coll-change="handleCollapsedChange">
-          <user :message-unread-count="unreadCount" :user-avator="userAvator"/>
+          <user :message-unread-count="unreadCount" :user-avator="userAvator" />
           <language
             v-if="$config.useI18n"
             @on-lang-change="setLocal"
@@ -41,7 +47,7 @@
             :has-read="hasReadErrorPage"
             :count="errorCount"
           ></error-store>
-          <fullscreen v-model="isFullscreen" style="margin-right: 10px;"/>
+          <fullscreen v-model="isFullscreen" style="margin-right: 10px;" />
         </header-bar>
       </Header>
       <Content class="main-content-con">
@@ -56,7 +62,7 @@
           </div>
           <Content class="content-wrapper">
             <keep-alive :include="cacheList">
-              <router-view/>
+              <router-view />
             </keep-alive>
             <ABackTop :height="100" :bottom="80" :right="50" container=".content-wrapper"></ABackTop>
           </Content>
@@ -71,7 +77,7 @@ import HeaderBar from "./components/header-bar";
 import TagsNav from "./components/tags-nav";
 import User from "./components/user";
 import ABackTop from "./components/a-back-top";
-import Fullscreen from "./components/fullscreen";
+// import Fullscreen from "./components/fullscreen";
 import Language from "./components/language";
 import ErrorStore from "./components/error-store";
 import { mapMutations, mapActions, mapGetters } from "vuex";
@@ -87,14 +93,14 @@ export default {
     HeaderBar,
     Language,
     TagsNav,
-    Fullscreen,
+    // Fullscreen,
     ErrorStore,
     User,
     ABackTop
   },
   data() {
     return {
-      collapsed: true,
+      collapsed: false,
       minLogo,
       maxLogo,
       isFullscreen: false

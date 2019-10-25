@@ -2,7 +2,7 @@ export default {
   /**
    * @description 配置顯示在瀏覽器標籤的title
    */
-  title: 'DncZeus通用後台權限管理框架',
+  title: '誠邦後台管理',
   /**
    * @description token在Cookie中存儲的天數，默認1天
    */
@@ -19,7 +19,7 @@ export default {
   baseUrl: {
     dev: 'http://localhost:54321/',
     pro: 'http://localhost:54321/',
-    defaultPrefix:"api/v1/"
+    defaultPrefix: "api/v1/"
   },
   authUrl: {
     dev: 'http://localhost:54321/api/oauth/auth',
@@ -34,7 +34,7 @@ export default {
    */
   plugin: {
     'error-store': {
-      showInHeader: true, // 設為false後不會在頂部顯示錯誤日誌徽標
+      showInHeader: false, // 設為false後不會在頂部顯示錯誤日誌徽標
       developmentOff: true // 設為true後在開發環境不會收集錯誤信息，方便開發中排查錯誤
     }
   }

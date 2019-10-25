@@ -1,15 +1,17 @@
 <template>
   <div class="user-avator-dropdown">
     <Dropdown @on-click="handleClick">
-      <Badge :dot="!!messageUnreadCount">
+      <!-- <Badge :dot="!!messageUnreadCount">
         <Avatar :src="userAvator"/>
         <span> {{ this.$store.state.user.userName}} </span>
-      </Badge>
+      </Badge>-->
+      <Avatar :src="userAvator" />
+      <span>{{ this.$store.state.user.userName}}</span>
       <Icon :size="18" type="md-arrow-dropdown"></Icon>
       <DropdownMenu slot="list">
-        <DropdownItem name="message">
+        <!-- <DropdownItem name="message">
           消息中心<Badge style="margin-left: 10px" :count="messageUnreadCount"></Badge>
-        </DropdownItem>
+        </DropdownItem>-->
         <DropdownItem name="logout">退出登錄</DropdownItem>
       </DropdownMenu>
     </Dropdown>
@@ -17,14 +19,14 @@
 </template>
 
 <script>
-import './user.less'
-import { mapActions } from 'vuex'
+import "./user.less";
+import { mapActions } from "vuex";
 export default {
-  name: 'User',
+  name: "User",
   props: {
     userAvator: {
       type: String,
-      default: ''
+      default: ""
     },
     messageUnreadCount: {
       type: Number,
@@ -32,43 +34,42 @@ export default {
     }
   },
   methods: {
-    ...mapActions([
-      'handleLogOut'
-    ]),
-    logout () {
+    ...mapActions(["handleLogOut"]),
+    logout() {
       var $this = this;
       this.$Modal.confirm({
-        title:"退出確認",
-        content:"確定要退出系統嗎?",
-        okText:"確定退出",
-        cancelText:"再想想",
-        loading:true,
-        onOk(){
-
-          setTimeout(function(){
+        title: "退出確認",
+        content: "確定要退出系統嗎?",
+        okText: "確定退出",
+        cancelText: "再想想",
+        loading: true,
+        onOk() {
+          setTimeout(function() {
             $this.handleLogOut().then(() => {
-            $this.$Modal.remove();
-            $this.$router.push({
-              name: 'login'
-            })
-          })
-          },1500);
+              $this.$Modal.remove();
+              $this.$router.push({
+                name: "login"
+              });
+            });
+          }, 1500);
         }
       });
     },
-    message () {
+    message() {
       this.$router.push({
-        name: 'message_page'
-      })
+        name: "message_page"
+      });
     },
-    handleClick (name) {
+    handleClick(name) {
       switch (name) {
-        case 'logout': this.logout()
-          break
-        case 'message': this.message()
-          break
+        case "logout":
+          this.logout();
+          break;
+        case "message":
+          this.message();
+          break;
       }
     }
   }
-}
+};
 </script>
